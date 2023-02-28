@@ -10,6 +10,6 @@ export default new DataSource({
   password: 'pass123',
   database: 'postgres',
   entities: ['dist/**/*.entity.js'],
-  // migrations: ['dist/migrations/*.js'],
+  // migrations: ['dist/migrations/*.js'], 不生效原因
   migrations: [CoffeeRefactor1677218621384],
 });
