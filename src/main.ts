@@ -12,6 +12,7 @@ async function bootstrap() {
       transformOptions: { enableImplicitConversion: true },
     }),
   );
+  // app.setGlobalPrefix('/api/v1');
   await app.listen(3000);
 }
 bootstrap();
