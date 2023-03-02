@@ -11,7 +11,8 @@ import {
   Delete,
   Query,
 } from '@nestjs/common';
-import { PagenationQueryDto } from 'src/commo/dto/pagenation-query-dto';
+import { Public } from '../common/decorators/public.decorators';
+import { PagenationQueryDto } from '../common/dto/pagenation-query-dto';
 import { CoffeesService } from './coffees.service';
 import { CreateCoffeeDto } from './dto/create-coffee.dto/create-coffee.dto';
 import { UpdateCoffeeDto } from './dto/create-coffee.dto/update-coffee.dto';
@@ -19,6 +20,8 @@ import { UpdateCoffeeDto } from './dto/create-coffee.dto/update-coffee.dto';
 @Controller('coffees')
 export class CoffeesController {
   constructor(private readonly coffeesService: CoffeesService) {}
+
+  @Public()
   @Get()
   findAll(@Query() pagenationQuery: PagenationQueryDto) {
     // const { limit, offset } = pagenationQuery;

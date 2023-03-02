@@ -7,7 +7,7 @@ import {
 } from '@nestjs/common';
 import { ConfigService, ConfigType } from '@nestjs/config';
 import { InjectRepository } from '@nestjs/typeorm';
-import { PagenationQueryDto } from 'src/commo/dto/pagenation-query-dto';
+import { PagenationQueryDto } from 'src/common/dto/pagenation-query-dto';
 import coffeesConfig from 'src/config/coffee.config';
 import { Event } from 'src/events/entities/event.entity';
 import { DataSource, Repository } from 'typeorm';
