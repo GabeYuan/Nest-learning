@@ -11,6 +11,7 @@ import {
   Delete,
   Query,
 } from '@nestjs/common';
+import { ParseIntPipe } from '../common/pipes/parse-int.pipe';
 import { Public } from '../common/decorators/public.decorators';
 import { PagenationQueryDto } from '../common/dto/pagenation-query-dto';
 import { CoffeesService } from './coffees.service';
@@ -30,7 +31,7 @@ export class CoffeesController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id', ParseIntPipe) id: number) {
     return this.coffeesService.findOne(id);
   }
 

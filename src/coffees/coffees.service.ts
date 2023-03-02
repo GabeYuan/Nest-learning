@@ -46,9 +46,9 @@ export class CoffeesService {
     });
   }
 
-  async findOne(id: string) {
+  async findOne(id: number) {
     const coffee = await this.coffeeRepository.findOne({
-      where: { id: Number(id) },
+      where: { id: id },
       relations: ['flavors'],
     });
     if (!coffee) {
