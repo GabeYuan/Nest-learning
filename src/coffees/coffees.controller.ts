@@ -18,11 +18,14 @@ import { CoffeesService } from './coffees.service';
 import { CreateCoffeeDto } from './dto/create-coffee.dto/create-coffee.dto';
 import { UpdateCoffeeDto } from './dto/create-coffee.dto/update-coffee.dto';
 import { Protocol } from 'src/common/decorators/protocol.decorators';
+import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('coffees')
 @Controller('coffees')
 export class CoffeesController {
   constructor(private readonly coffeesService: CoffeesService) {}
 
+  @ApiResponse({ status: 403, description: 'Forbidden.' })
   @Public()
   @Get()
   async findAll(
